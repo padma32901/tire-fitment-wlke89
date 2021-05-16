@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row empty-message">
+    Please click on
+    <button class="button" (click)="getYears()">Select Vehicle</button>
+  </div>
+  <nav aria-label="breadcrumb" *ngIf="breadCrumbs?.length > 0">
+    <ol class="breadcrumb">
+      <li *ngFor="let filter of breadCrumbs" class="breadcrumb-item">
+        <a (click)="OnItemClick(filter.key, filter.val)">{{filter.val}}</a>
+      </li>
+    </ol>
+  </nav>
+  <div *ngIf="vehicle">
+    Vehicle: {{vehicle}}
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div [ngSwitch]="selectedType">
+        <div class="data" *ngSwitchCase="'years'">
+          <p *ngFor="let item of data$ | async">
+            <button class="button" (click)="OnItemClick('makes', item)">
+              <span>{{item}} </span>
+            </button>
+          </p>
+        </div>
+
+        <div class="data" *ngSwitchCase="'makes'">
+          <p *ngFor="let item of data$ | async">
+            <button class="button" (click)="OnItemClick('models', item)">
+              <span>{{item}} </span>
+            </button>
+          </p>
+        </div>
+
+        <div class="data" *ngSwitchCase="'models'">
+          <p *ngFor="let item of data$ | async">
+            <button class="button" (click)="OnItemClick('trim', item)">
+              <span>{{item}} </span>
+            </button>
+          </p>
+        </div>
+
+        <div class="data" *ngSwitchCase="'trim'">
+          <p *ngFor="let item of data$ | async">
+            <button class="button"><span>{{item}} </span></button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

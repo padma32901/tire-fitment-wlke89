@@ -1,0 +1,32 @@
+/* Add application styles & imports to this file! */
+
+.button {
+  background-color: #f4501ee0;
+  border: none;
+  color: white;
+  padding: 7px 10px;
+  text-align: center;
+  font-size: 14px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.panel-body {
+  overflow: scroll;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+.breadcrumb {
+  background-color: #0e5d7099;
+}
+
+a {
+  color: white;
+  text-decoration: underline;
+}

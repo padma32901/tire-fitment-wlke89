@@ -1,0 +1,12 @@
+.data {
+  height: 500px;
+  float: left;
+}
+p {
+  float: left;
+}
+
+.empty-message {
+  padding: 40px;
+  color: gray;
+}
